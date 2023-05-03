@@ -2,12 +2,12 @@ const { QueryType } = require('discord-player');
 const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 module.exports = {
     name: 'play',
-    description: "play a song!",
+    description: "Joue un morceau / ajoute une piste/playlist",
     voiceChannel: true,
     options: [
         {
             name: 'song',
-            description: 'the song you want to play',
+            description: 'le morceau en question',
             type: ApplicationCommandOptionType.String,
             required: true,
         }
@@ -43,16 +43,14 @@ module.exports = {
             const NoVoiceEmbed = new EmbedBuilder()
                 .setAuthor({ name: `Impossible de rejoindre le salon vocal... ❌` })
                 .setColor('#2f3136')
-
+            console.log("Impossible de rejoindre le salon vocal")
             return inter.editReply({ embeds: [NoVoiceEmbed] });
         }
-
         const playEmbed = new EmbedBuilder()
-            .setAuthor({ name: `Chargement de ${res.playlist ? 'la playlist' : 'la piste'}... ✅` })
+            .setAuthor({ name: `Chargement de ${res.playlist ? 'la playlist' : 'la piste'}... ✅, demandé par <@${inter.user.username}>` })
             .setColor('#2f3136')
 
         await inter.editReply({ embeds: [playEmbed] });
-
 
         res.playlist ? queue.addTrack(res.tracks) : queue.addTrack(res.tracks[0]);
 

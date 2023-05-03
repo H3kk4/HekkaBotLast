@@ -3,12 +3,12 @@ const { QueryType } = require('discord-player');
 
 module.exports = {
     name: 'playnext',
-    description: "song you want to playnext",
+    description: "Joue le morceau passé en paramètre juste après",
     voiceChannel: true,
     options: [
         {
             name: 'song',
-            description: 'the song you want to playnext',
+            description: 'le son en question',
             type: ApplicationCommandOptionType.String,
             required: true,
         }
@@ -33,7 +33,7 @@ module.exports = {
         queue.insertTrack(res.tracks[0], 0)
 
         const PlayNextEmbed = new EmbedBuilder()
-            .setAuthor({ name: `Le morceau sera joué en suivant 🎧` })
+            .setAuthor({ name: `Le morceau sera joué en suivant 🎧, demandé par <@${inter.member.user.id}>` })
             .setColor('#2f3136')
 
         await inter.editReply({ embeds: [PlayNextEmbed] });

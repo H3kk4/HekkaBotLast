@@ -3,19 +3,19 @@ const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 
 module.exports = {
     name: 'loop',
-    description: 'enable or disable looping of song\'s or the whole queue',
+    description: 'Active ou désactive le mode boucle',
     voiceChannel: true,
     options: [
         {
             name: 'action',
-            description: 'what action you want to preform on the loop',
+            description: 'l\'action voulue',
             type: ApplicationCommandOptionType.String,
             required: true,
             choices: [
-                { name: 'Queue', value: 'enable_loop_queue' },
-                { name: 'Disable', value: 'disable_loop' },
-                { name: 'Song', value: 'enable_loop_song' },
-                { name: 'autoplay', value: 'enable_autoplay' },
+                { name: 'File d\'attente', value: 'enable_loop_queue' },
+                { name: 'Désactiver', value: 'disable_loop' },
+                { name: 'La piste', value: 'enable_loop_song' },
+                { name: 'Autoplay', value: 'enable_autoplay' },
             ],
         }
     ],
@@ -31,7 +31,7 @@ module.exports = {
 
                 const success = queue.setRepeatMode(QueueRepeatMode.QUEUE);
 
-                BaseEmbed.setAuthor({ name: success ? `Y'a eu un problème frr ${inter.member}... ❌` : `Mode boucle **activé**, ça va jamais s'arrêter 🔁` })
+                BaseEmbed.setAuthor({ name: success ? `Y'a eu un problème frr ${inter.member}... ❌` : `Mode boucle **activé**, ça va jamais s'arrêter 🔁, demandé par <@${inter.member}>` })
 
                 return inter.editReply({ embeds: [BaseEmbed] });
 
@@ -51,7 +51,7 @@ module.exports = {
 
                 const success = queue.setRepeatMode(QueueRepeatMode.TRACK);
 
-                BaseEmbed.setAuthor({ name: success ? `Y'a eu un problème frr${inter.member}... ❌` : `Mode boucle **activé** ça va jamais s'arrêter 🔁` })
+                BaseEmbed.setAuthor({ name: success ? `Y'a eu un problème frr${inter.member}... ❌` : `Mode boucle **activé** ça va jamais s'arrêter 🔁, demandé par ${inter.member}` })
 
                 return inter.editReply({ embeds: [BaseEmbed] });
 
@@ -61,7 +61,7 @@ module.exports = {
 
                 const success = queue.setRepeatMode(QueueRepeatMode.AUTOPLAY);
 
-                BaseEmbed.setAuthor({ name: success ? `Y'a eu un problème frr ${inter.member}... ❌` : `Autoplay **activé** la liste d'attente va être remplie automatiquement avec des morceaux similaires 🔁` })
+                BaseEmbed.setAuthor({ name: success ? `Y'a eu un problème frr ${inter.member}... ❌` : `Autoplay **activé** la liste d'attente va être remplie automatiquement avec des morceaux similaires 🔁, demandé par ${inter.member}` })
 
                 return inter.editReply({ embeds: [BaseEmbed] });
 

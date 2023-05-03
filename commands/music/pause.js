@@ -1,7 +1,7 @@
 const { EmbedBuilder } = require('discord.js');
 module.exports = {
     name: 'pause',
-    description: 'pause the track',
+    description: 'Met la piste en pause',
     voiceChannel: true,
 
     execute({ inter }) {
@@ -14,7 +14,7 @@ module.exports = {
         const success = queue.node.setPaused(true);
 
         const PauseEmbed = new EmbedBuilder()
-            .setAuthor({ name: success ? `La piste ${queue.currentTrack.title} est mise en pause ✅` : `Y'a eu un problème, ${inter.member}... ❌` })
+            .setAuthor({ name: success ? `La piste ${queue.currentTrack.title} est mise en pause ✅, demandé par <@${inter.user.username}>` : `Y'a eu un problème, ${inter.member}... ❌` })
             .setColor('#2f3136')
 
         return inter.editReply({ embeds: [PauseEmbed] });

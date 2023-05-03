@@ -2,7 +2,7 @@ const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
     name: 'resume',
-    description: 'play the track',
+    description: 'Remets la piste en lecture',
     voiceChannel: true,
 
     execute({ inter }) {

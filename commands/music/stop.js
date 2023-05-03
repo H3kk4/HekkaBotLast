@@ -2,7 +2,7 @@ const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
     name: 'stop',
-    description: 'stop the track',
+    description: 'Arrête la lecture',
     voiceChannel: true,
 
     execute({ inter }) {
@@ -14,7 +14,7 @@ module.exports = {
 
         const StopEmbed = new EmbedBuilder()
             .setColor('#2f3136')
-            .setAuthor({ name: `Le devoir m'appelle, salut les cassos ✅` })
+            .setAuthor({ name: `Le devoir m'appelle, merci de m'avoir libéré <@${inter.user.username}> ✅` })
 
 
         return inter.editReply({ embeds: [StopEmbed] });

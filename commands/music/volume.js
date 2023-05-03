@@ -3,12 +3,12 @@ const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 
 module.exports = {
     name: 'volume',
-    description: 'adjust',
+    description: 'Ajuste le volume',
     voiceChannel: true,
     options: [
         {
             name: 'volume',
-            description: 'the amount volume',
+            description: 'le volume en question',
             type: ApplicationCommandOptionType.Number,
             required: true,
             minValue: 1,

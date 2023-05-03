@@ -3,12 +3,12 @@ const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 
 module.exports = {
     name: 'seek',
-    description: 'skip back or foward in a song',
+    description: 'Avance ou recule dans le morceau',
     voiceChannel: true,
     options: [
         {
             name: 'time',
-            description: 'time that you want to skip to',
+            description: 'le timecode',
             type: ApplicationCommandOptionType.String,
             required: true,
         }

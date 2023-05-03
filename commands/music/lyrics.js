@@ -2,7 +2,7 @@ const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
     name: 'lyrics',
-    description: 'get lyrics for the current track',
+    description: 'Obtient les paroles',
     voiceChannel: true,
 
     async execute({ inter }) {

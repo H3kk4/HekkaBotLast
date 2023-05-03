@@ -2,12 +2,12 @@ const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 
 module.exports = {
     name: 'filter',
-    description: 'add a filter to your track',
+    description: 'Ajoute un filtre',
     voiceChannel: true,
     options: [
         {
             name: 'filter',
-            description: 'filter you want to add',
+            description: 'le filtre',
             type: ApplicationCommandOptionType.String,
             required: true,
             choices: [...Object.keys(require("discord-player").AudioFilters.filters).map(m => Object({ name: m, value: m })).splice(0, 25)],

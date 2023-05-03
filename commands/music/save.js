@@ -2,7 +2,7 @@ const { EmbedBuilder } = require("discord.js");
 
 module.exports = {
     name: 'save',
-    description: 'save the current track!',
+    description: 'Envoie un DM avec le nom du morceau',
     voiceChannel: true,
 
     async execute({ inter }) {
@@ -17,10 +17,10 @@ module.exports = {
                     .setTitle(`:arrow_forward: ${queue.currentTrack.title}`)
                     .setURL(queue.currentTrack.url)
                     .addFields(
-                        { name: ':hourglass: Duration:', value: `\`${queue.currentTrack.duration}\``, inline: true },
-                        { name: 'Song by:', value: `\`${queue.currentTrack.author}\``, inline: true },
-                        { name: 'Views :eyes:', value: `\`${Number(queue.currentTrack.views).toLocaleString()}\``, inline: true },
-                        { name: 'Song URL:', value: `\`${queue.currentTrack.url}\`` }
+                        { name: ':hourglass: Durée:', value: `\`${queue.currentTrack.duration}\``, inline: true },
+                        { name: 'De:', value: `\`${queue.currentTrack.author}\``, inline: true },
+                        //{ name: 'Views :eyes:', value: `\`${Number(queue.currentTrack.views).toLocaleString()}\``, inline: true },
+                        { name: 'URL:', value: `\`${queue.currentTrack.url}\`` }
                     )
                     .setThumbnail(queue.currentTrack.thumbnail)
                     .setFooter({ text: `Du serveur ${inter.member.guild.name}`, iconURL: inter.member.guild.iconURL({ dynamic: false }) })

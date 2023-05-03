@@ -1,7 +1,7 @@
 const { EmbedBuilder } = require('discord.js');
 module.exports = {
     name: 'back',
-    description: "Go back the song before",
+    description: "Joue la piste précédente",
     voiceChannel: true,
 
     async execute({ inter }) {
@@ -14,7 +14,7 @@ module.exports = {
         await queue.history.back();
 
         const BackEmbed = new EmbedBuilder()
-            .setAuthor({ name: `Lecture de la piste **précédente** ✅` })
+            .setAuthor({ name: `Lecture de la piste **précédente** ✅, demandé par <@${inter.user.username}>  ` })
             .setColor('#2f3136')
 
         inter.editReply({ embeds: [BackEmbed] });

@@ -1,7 +1,7 @@
 const { EmbedBuilder } = require('discord.js');
 module.exports = {
     name: 'clear',
-    description: 'clear all the music in the queue',
+    description: 'Vide la file d\'attente',
     voiceChannel: true,
 
     async execute({ inter }) {

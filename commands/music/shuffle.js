@@ -2,7 +2,7 @@ const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
     name: 'shuffle',
-    description: 'shuffle the track',
+    description: 'Active le mode aléatoire',
     voiceChannel: true,
 
     async execute({ inter }) {

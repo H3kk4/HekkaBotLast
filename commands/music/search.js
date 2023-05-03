@@ -3,12 +3,12 @@ const { QueryType } = require('discord-player');
 
 module.exports = {
     name: 'search',
-    description: 'search a track',
+    description: 'Cherche un son',
     voiceChannel: true,
     options: [
         {
             name: 'song',
-            description: 'the song you want to search',
+            description: 'le son en question',
             type: ApplicationCommandOptionType.String,
             required: true,
         }

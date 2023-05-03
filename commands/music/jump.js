@@ -2,18 +2,18 @@ const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 
 module.exports = {
     name: 'jump',
-    description: "Jumps to particular track in queue",
+    description: "Joue la piste correspondante dans la file d'attente",
     voiceChannel: true,
     options: [
         {
             name: 'song',
-            description: 'the name/url of the track you want to jump to',
+            description: 'le nom ou l\'url',
             type: ApplicationCommandOptionType.String,
             required: false,
         },
         {
             name: 'number',
-            description: 'the place in the queue the song is in',
+            description: 'la destination dans la file d\'attente',
             type: ApplicationCommandOptionType.Number,
             required: false,
         }

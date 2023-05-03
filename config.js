@@ -4,10 +4,10 @@ dotenv.config();
 module.exports = {
     app: {
         token: process.env.token,
-        listening: 'on est là',
+        playing: 'on est là',
         global: false,
         guild: '883032021490864228',
-        ExtraMessages: false,
+        ExtraMessages: true,
         loopMessage: false,
 
     },
@@ -21,8 +21,8 @@ module.exports = {
         maxVol: 100,
         spotifyBridge: true,
         volume: 75,
-        leaveOnEmpty: false,
-        leaveOnEmptyCooldown: 30000,
+        leaveOnEmpty: true,
+        leaveOnEmptyCooldown: 5000,
         leaveOnEnd: false,
         leaveOnEndCooldown: 30000,
         discordPlayer: {

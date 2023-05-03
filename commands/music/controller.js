@@ -2,13 +2,13 @@ const { ApplicationCommandOptionType, ActionRowBuilder, ButtonBuilder, EmbedBuil
 
 module.exports = {
     name: 'controller',
-    description: "set controller channel ",
+    description: "Définit le contrôleur sur un channel",
     voiceChannel: false,
     permissions: PermissionsBitField.Flags.ManageMessages,
     options: [
         {
             name: 'channel',
-            description: 'the channel you want to send it to',
+            description: 'le channel',
             type: ApplicationCommandOptionType.Channel,
             required: true,
         }
